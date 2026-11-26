@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;background:#222} svg{display:block}
+text{font-family:"Inter Display";font-weight:900}
+</style></head><body>
+<!-- A: coin in perspective -->
+<svg id="a" width="1080" height="1080" viewBox="0 0 1080 1080">
+ <rect width="1080" height="1080" fill="#0F3B2E"/>
+ <g transform="translate(540 540)">
+  <ellipse cx="38" cy="0" rx="250" ry="372" fill="#9A6A0C"/>
+  <rect x="0" y="-372" width="38" height="744" fill="#9A6A0C"/>
+  <g fill="#7A5208">
+   <rect x="6" y="-360" width="6" height="720" opacity=".5"/>
+   <rect x="22" y="-366" width="6" height="732" opacity=".5"/>
+  </g>
+  <ellipse cx="0" cy="0" rx="250" ry="372" fill="#F2C230"/>
+  <ellipse cx="0" cy="0" rx="208" ry="320" fill="none" stroke="#C99512" stroke-width="16"/>
+  <text x="0" y="0" transform="scale(.68 1)" font-size="470" fill="#9A6A0C" text-anchor="middle" dominant-baseline="central">₹</text>
+  <path d="M-180 -250 A250 372 0 0 1 -60 -360" stroke="#FFF2B8" stroke-width="22" fill="none" stroke-linecap="round" opacity=".9"/>
+ </g>
+</svg>
+<!-- B: extruded pp -->
+<svg id="b" width="1080" height="1080" viewBox="0 0 1080 1080">
+ <rect width="1080" height="1080" fill="#F3E9D2"/>
+ <g id="ext"></g>
+ <text id="front" x="490" y="400" font-size="560" fill="#16161A" text-anchor="middle" dominant-baseline="central" letter-spacing="-30">pp</text>
+</svg>
+<!-- C: mascot face -->
+<svg id="c" width="1080" height="1080" viewBox="0 0 1080 1080">
+ <rect width="1080" height="1080" fill="#A8DCC8"/>
+ <circle cx="540" cy="1180" r="420" fill="#2F6FB3" stroke="#141018" stroke-width="22"/>
+ <circle cx="540" cy="540" r="330" fill="#C98D63" stroke="#141018" stroke-width="24"/>
+ <path d="M214 540 C214 300 360 222 540 222 C720 222 866 300 866 540 C800 470 760 455 720 452 C700 420 690 410 670 405 C640 440 560 450 470 445 C400 440 330 450 214 540 Z" fill="#231A26" stroke="#141018" stroke-width="20" stroke-linejoin="round"/>
+ <ellipse cx="440" cy="580" rx="30" ry="40" fill="#141018"/>
+ <ellipse cx="640" cy="580" rx="30" ry="40" fill="#141018"/>
+ <circle cx="450" cy="566" r="10" fill="#fff"/><circle cx="650" cy="566" r="10" fill="#fff"/>
+ <path d="M400 512 Q440 495 480 508" stroke="#141018" stroke-width="16" fill="none" stroke-linecap="round"/>
+ <path d="M600 500 Q640 488 680 506" stroke="#141018" stroke-width="16" fill="none" stroke-linecap="round"/>
+ <path d="M462 700 C490 676 520 672 540 690 C560 672 590 676 618 700 C590 708 562 704 540 700 C518 704 490 708 462 700 Z" fill="#231A26" stroke="#141018" stroke-width="10" stroke-linejoin="round"/>
+ <path d="M488 748 Q540 772 592 744" stroke="#141018" stroke-width="14" fill="none" stroke-linecap="round"/>
+ <g transform="translate(540 960)">
+  <circle r="62" fill="#F2C230" stroke="#141018" stroke-width="12"/>
+  <text y="4" font-size="80" fill="#141018" text-anchor="middle" dominant-baseline="central">₹</text>
+ </g>
+</svg>
+<script>
+const ext=document.getElementById('ext'), N=70;
+for(let i=N;i>0;i--){const t=document.createElementNS('http://www.w3.org/2000/svg','text');
+ const k=i/N; t.setAttribute("x",490+70*k); t.setAttribute("y",400+70*k);
+ t.setAttribute('font-size',560); t.setAttribute('text-anchor','middle'); t.setAttribute('dominant-baseline','central');
+ t.setAttribute('letter-spacing','-30'); t.setAttribute('fill', i<3? '#E2552D' : (i%2? '#C8401C':'#C8401C'));
+ t.textContent='pp'; ext.appendChild(t);}
+</script></body></html>
